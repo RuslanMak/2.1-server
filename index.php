@@ -33,11 +33,7 @@ $contacts = json_decode($json, true);
         <td><?php echo $contact['lastName']?></td>
         <td><?php echo $contact['address']['city'] . ' ' . $contact['address']['street']?></td>
         <td>
-          <?php
-            foreach($contact['phoneNumber'] as $phone) {
-              echo $phone . '<br>';
-            }
-          ?>
+          <?php echo implode('<br>', $contact['phoneNumber']);?>
         </td>
       </tr>
     <?php endforeach; ?>
